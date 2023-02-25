@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            * {
+                box-sizing: border-box;
+                padding: 0;
+                margin: 0;
+            }
+            table,
+            tr,
+            td {
+                border: 1px solid black;
+                border-collapse: collapse;
+            }
+            .container {
+                margin: 1rem auto;
+                padding: 1.5rem;
+                width: 100vw;
+                min-height: 100vh;
+                height: fit-content;
+            }
+            table {
+                width: 100%;
+                margin-top: 3rem;
+                text-align: center;
+                font-family: "Times New Roman", Times, serif;
+                font-size: large;
+            }
+            td {
+                padding: 10px 0px;
+            }
+            #add-row-btn {
+                background: #000;
+                color: #fff;
+                padding: 0.5rem 1.5rem;
+                cursor: pointer;
+                width: 200px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <button id="add-row-btn">Create A New Row</button>
+            <table id="marks-table">
+                <thead>
+                    <tr>
+                        <td>ID</td>
+                        <td>Student Name</td>
+                        <td>Roll No.</td>
+                        <td>Subject</td>
+                        <td>Marks</td>
+                        <td>Marked By</td>
+                        <td>Save</td>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+        <script src="script.js" defer></script>
+    </body>
+</html>
