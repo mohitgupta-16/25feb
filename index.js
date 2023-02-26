@@ -10,15 +10,12 @@ function createTd(data, tr) {
 
     if (data.elementName == "button") {
         element.textContent = data.text;
-        // element.onClick = data.onclick;
-        element.addEventListener("click", saveData);
+        element.onClick = data.onClick;
     }
 
     if (data.elementName == "span") {
         element.textContent = data.text;
     }
-
-    console.log(element);
 
     td.append(element);
     tr.append(td);
@@ -59,10 +56,11 @@ function renderTable() {
                 text: student.markedBy,
             },
         ];
-        tds.forEach((data) => createTd(data, tr));
-
-        tBody.append(tr);
     });
+
+    tds.forEach((data) => createTd(data, tr));
+
+    tBody.append(tr);
 }
 
 function saveData() {
@@ -71,7 +69,7 @@ function saveData() {
     const subject = document.querySelector("#subject").value.trim();
     const marks = document.querySelector("#marks").value.trim();
     const markedBy = document.querySelector("#markedBy").value.trim();
-    const rowId = document.querySelector("#rowId").textContent;
+    const rowId = document.querySelector("#rowId");
     const saveBtn = document.querySelector("#save");
 
     if (!name || !rollNo || !subject || !marks || !markedBy) {
@@ -100,7 +98,7 @@ function saveData() {
 
     saveBtn.style.display = "none";
 
-    // alert("HI");
+    alert("HI");
 
     renderTable();
 }
@@ -142,7 +140,7 @@ function addNewRow() {
         },
         {
             elementName: "button",
-            // onclick: 'saveData',
+            onClick: saveData,
             text: "Save",
             id: "save",
         },
